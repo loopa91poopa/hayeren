@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#FBF6EF">
+  <title>Հայերեն մոպսի հետ</title>
+  <meta name="description" content="Армянский язык с мопсом: сначала буквы, потом слова, потом предложения. Уроки, повторение, диалоги и игры.">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" href="icons/icon-192.png" type="image/png">
+  <link rel="apple-touch-icon" href="icons/icon-192.png">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-title" content="Հայերեն մոպսի հետ">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <link rel="stylesheet" href="css/app.css">
+  <script>
+    // Тема применяется до отрисовки, чтобы не было вспышки светлого фона.
+    (function () {
+      try {
+        var s = JSON.parse(localStorage.getItem('hayeren-mopsi-het:v1') || '{}').settings || {};
+        var t = s.theme || 'auto';
+        if (t === 'auto') t = window.matchMedia && matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+        document.documentElement.setAttribute('data-theme', t);
+      } catch (e) {}
+    })();
+  </script>
+</head>
+<body>
+  <a class="skip-link" href="#app-main">К содержанию</a>
+  <header id="app-header" class="app-header"></header>
+  <div class="app-shell">
+    <nav id="app-nav" class="app-nav" aria-label="Разделы"></nav>
+    <main id="app-main" class="app-main" tabindex="-1"></main>
+  </div>
+  <nav id="app-bottom" class="app-bottom" aria-label="Основные разделы"></nav>
+  <noscript><p style="padding:16px">Для работы приложения нужен JavaScript.</p></noscript>
+
+  <!-- Ядро: без интерфейса -->
+  <script src="js/core/translit.js"></script>
+  <script src="js/core/checker.js"></script>
+  <script src="js/core/storage.js"></script>
+  <script src="js/core/srs.js"></script>
+  <script src="js/core/progress.js"></script>
+  <script src="js/core/audio.js"></script>
+  <script src="audio/index.js"></script>
+  <!-- Учебный контент -->
+  <script src="js/content/texts.js"></script>
+  <script src="js/content/vocab.js"></script>
+  <script src="js/content/lessons.js"></script>
+  <script src="js/content/dialogues.js"></script>
+  <script src="js/content/course.js"></script>
+  <script src="js/content/exams.js"></script>
+  <script src="js/content/rules.js"></script>
+  <script src="js/content/diagnostic-bank.js"></script>
+  <script src="js/content/phrases.js"></script>
+  <!-- Логика обучения -->
+  <script src="js/core/diagnostic.js"></script>
+  <script src="js/core/planner.js"></script>
+  <script src="js/core/review.js"></script>
+  <!-- Интерфейс -->
+  <script src="js/ui/dom.js"></script>
+  <script src="js/ui/charpanel.js"></script>
+  <script src="js/ui/mascot.js"></script>
+  <script src="js/ui/player.js"></script>
+  <script src="js/ui/daily.js"></script>
+  <script src="js/ui/install.js"></script>
+  <script src="js/views/start.js"></script>
+  <script src="js/views/learn.js"></script>
+  <script src="js/views/course.js"></script>
+  <script src="js/views/rules.js"></script>
+  <script src="js/views/info.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
